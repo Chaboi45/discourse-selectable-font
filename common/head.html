@@ -1,0 +1,75 @@
+
+<style>
+
+
+body.georgiad {
+  font-family: georgia;  
+}
+body.robotod {
+  font-family: roboto;
+}
+body.helveticad {
+    font-family: helvetica;
+}
+body.monospaced {
+    font-family: monospace;
+}
+</style>
+<a  class="btn btn-primary" id="helveticaA">Helvetica</a>
+<a  class="btn btn-primary" id="robotoA">Roboto</a>
+<a  class="btn btn-primary" id="monospaceA">Monospace</a>
+<a  class="btn btn-primary" id="georgiaA">Georgia</a>
+<script>
+
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
+
+  // if the element is already in the DOM
+  document.getElementById("robotoA").addEventListener("click", function(){
+  
+  //document.location.reload(true)
+  document.body.classList.remove('monospaced'); 
+  document.body.classList.remove('helveticad'); 
+  document.body.classList.add('robotod'); 
+  document.body.classList.remove('georgiad'); 
+  
+  
+});
+
+
+document.getElementById("helveticaA").addEventListener("click", function(){
+  
+  //document.location.reload(true)
+  document.body.classList.remove('monospaced'); 
+  document.body.classList.remove('robotod'); 
+  document.body.classList.add('helveticad'); 
+  document.body.classList.remove('georgiad'); 
+
+});
+document.getElementById("monospaceA").addEventListener("click", function(){
+  
+  //document.location.reload(true)
+  document.body.classList.remove('helveticad'); 
+  document.body.classList.remove('robotod'); 
+  document.body.classList.add('monospaced'); 
+  document.body.classList.remove('georgiad'); 
+
+});
+document.getElementById("georgiaA").addEventListener("click", function(){
+  
+  //document.location.reload(true)
+  document.body.classList.remove('helveticad'); 
+  document.body.classList.remove('robotod'); 
+  document.body.classList.remove('monospaced'); 
+  document.body.classList.add('georgiad'); 
+
+});
+  // otherwise, try event propagation
+  //$('#main').on('click', '#robotoA', changeRoboto());
+
+</script>
